@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #222831;
+}
+
+.container {
+  max-width: 100%;
+  /* Mengambil penuh lebar layar */
+  height: 100vh;
+  /* Mengambil penuh tinggi layar */
+  margin: 0;
+  /* Menghilangkan margin */
+  padding: 20px;
+  border-radius: 0;
+  /* Tidak perlu border radius */
+  box-shadow: none;
+  /* Menghilangkan bayangan */
+  background: #31363f;
+  display: flex;
+  flex-direction: column;
+  /* Mengatur elemen di dalamnya secara vertikal */
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #edf1f3;
+  margin-bottom: 20px;
+  /* Jarak antara judul dan area chat */
+}
+
+.chat {
+  flex: 1;
+  /* Membuat area chat mengisi seluruh ruang yang tersedia */
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px;
+  border: 2px solid #545250;
+  border-radius: 5px;
+  background: #222831;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.user {
+  justify-content: flex-end;
+}
+
+.bot {
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.user .avatar {
+  order: 2;
+  background: url("./images/avatar.jpg");
+  background-size: cover;
+}
+
+.bot .avatar {
+  order: 1;
+  background: url("./images/bot.png");
+  background-size: cover;
+}
+
+.text {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.user .text {
+  background: #4a4d52;
+}
+
+.bot .text {
+  background: #8c8c8e;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.input {
+  flex: 1;
+  /* Membuat input mengambil sisa ruang */
+  padding: 10px;
+  border: 2px solid #cbcbce;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+}
+
+.input:focus {
+  border-color: #8296d0;
+  color: #1e1f1f;
+}
+
+.button {
+  width: 60px;
+  height: 100%;
+  /* Sesuaikan tinggi dengan input */
+  margin-left: 10px;
+  border: none;
+  background: #31363f;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button i {
+  font-size: 3rem;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background: #bcbdc0;
+  border-radius: 10px;
+}
+
+.mode-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1000;
+}
+
+.mode-popup button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+  }
+  .input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .button {
+    width: 100%;
+  }
+}
